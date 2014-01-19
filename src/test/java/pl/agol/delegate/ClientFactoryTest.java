@@ -1,9 +1,11 @@
 package pl.agol.delegate;
 
 import static org.fest.assertions.Assertions.*;
+
 import org.testng.annotations.Test;
 
-import pl.agol.delegate.test.data.TestClient;
+import pl.agol.delegate.test.data.InvalidResource;
+import pl.agol.delegate.test.data.ValidResource;
 
 /**
  * 
@@ -13,22 +15,34 @@ import pl.agol.delegate.test.data.TestClient;
 public class ClientFactoryTest {
 
 	@Test
-	public void shouldBuildClientFromClassTest() {
+	public void should_build_client_from_class() {
 
-		TestClient testClient = ClientFactory.buildClient(TestClient.class);
+		ValidResource resource = ResourceFactory.build(ValidResource.class);
 
-		assertThat(testClient)
+		assertThat(resource)
 			.isNotNull();
 	}
 
 	@Test
-	public void shouldBuildClientFromObject() {
+	public void should_build_client_using_existing_object() {
 
-		TestClient testClient = new TestClient();
-		testClient = ClientFactory.buildClient(testClient);
+		ValidResource resource = new ValidResource();
+		resource = ResourceFactory.build(resource);
 		
-		assertThat(testClient)
+		assertThat(resource)
 			.isNotNull()
-			.isEqualTo(testClient);
+			.isEqualTo(resource);
+	}
+	
+	@Test(expectedExceptions = InvalidResourceException.class)
+	public void should_throw_InvalidClientException_while_building_client_from_class() {
+		
+		ResourceFactory.build(InvalidResource.class);
+	}
+	
+	@Test(expectedExceptions = InvalidResourceException.class)
+	public void should_throw_InvalidClientException_while_building_client_using_existing_object() {
+		
+		ResourceFactory.build(new InvalidResource());
 	}
 }
