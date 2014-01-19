@@ -5,6 +5,7 @@ import static org.fest.assertions.Assertions.*;
 import org.testng.annotations.Test;
 
 import pl.agol.delegate.test.data.InvalidResource;
+import pl.agol.delegate.test.data.TestService;
 import pl.agol.delegate.test.data.ValidResource;
 
 /**
@@ -44,5 +45,18 @@ public class ResourceFactoryTest {
 	public void should_throw_InvalidClientException_while_building_resource_using_existing_object() {
 		
 		ResourceFactory.build(new InvalidResource());
+	}
+	
+	@Test
+	public void should_inject_TestService() {
+	
+		ValidResource resource = ResourceFactory.build(ValidResource.class);
+		TestService testService = resource.getTestService();
+		
+		assertThat(testService)
+			.isNotNull();
+		
+		assertThat(testService.doSomeAction())
+			.isEqualTo(TestService.MESSAGE);
 	}
 }
