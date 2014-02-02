@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * 
- * @author andi
+ * @author Andrzej Goławski
  *
  */
 @Target({ElementType.TYPE})

@@ -2,10 +2,10 @@ package pl.agol.delegate.provider;
 
 /**
  * 
- * @author andi
+ * @author Andrzej Goławski
  * 
  */
 public interface DelegateProvider {
 
-	public Object getService();
+	public Object getService(String serviceName);
 }

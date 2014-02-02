@@ -9,13 +9,13 @@ import pl.agol.delegate.test.data.TestProvider;
 
 /**
  * 
- * @author andi
+ * @author Andrzej Goławski
  * 
  */
 public class DelagateProviderFactoryTest {
 
 	@Test
-	public void schould_bild_TestProvider() {
+	public void should_build_TestProvider() {
 
 		DelegateProvider delegateProvider = DelagateProviderFactory.build();
 

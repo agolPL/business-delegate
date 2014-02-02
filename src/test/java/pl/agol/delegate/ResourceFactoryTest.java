@@ -10,7 +10,7 @@ import pl.agol.delegate.test.data.ValidResource;
 
 /**
  * 
- * @author andi
+ * @author Andrzej Goławski
  * 
  */
 public class ResourceFactoryTest {

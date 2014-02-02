@@ -2,7 +2,7 @@ package pl.agol.delegate.test.data;
 
 /**
  * 
- * @author andi
+ * @author Andrzej Goławski
  *
  */
 public interface TestService {

@@ -5,7 +5,7 @@ import pl.agol.delegate.Resource;
 
 /**
  * 
- * @author andi
+ * @author Andrzej Goławski
  * 
  */
 @Resource
