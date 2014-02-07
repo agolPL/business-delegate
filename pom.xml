@@ -4,6 +4,10 @@
 	<groupId>pl.agol.delegate</groupId>
 	<artifactId>business-delegate</artifactId>
 	<version>1.0.0.RC1</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>business-delagate-core</module>
+	</modules>
 
 	<properties>
 		<testng.version>6.1.1</testng.version>
@@ -11,7 +15,7 @@
 		<mockito.version>1.7</mockito.version>
 		<powermock.version>1.5</powermock.version>
 	</properties>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -53,5 +57,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 </project>
